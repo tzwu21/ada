@@ -59,7 +59,7 @@ Begin
    while (status /= word ) AND (mistakes < 6) loop --status /= word
       printhangman(mistakes);
 
-      Put_Line("You have guessed the following character(s): " & To_String(guesses));
+      --Put_Line("You have guessed the following character(s): " & To_String(guesses));
       Ada.Text_IO.Put ("Enter a character to guess: "); --error check for already picked character
       declare
          S : String := Ada.Text_IO.Get_Line; --currently allows more than one character in
@@ -89,15 +89,26 @@ Begin
             
             else
                Append(guesses, currguess);
-               --String_Sort(guesses);
+            
 
                declare
-                  tempString : String := To_String(guesses); --switch to string 
+                  tempString : String := To_String(guesses); --switch to string
+                  tempSpace : Unbounded_String; 
                begin
-               Sort(tempString);
-               guesses := To_Unbounded_String(tempString); --switch to unbounded string
+               
+               Sort(tempString); --sorts in alphabetical order
+               
+
+               --guesses := To_Unbounded_String(tempString); --switch to unbounded string
+               for i in 1..Length(guesses) loop --spaces characters out
+                  Append(tempSpace, tempString(i));
+                  Append(tempSpace, " ");
+               end loop;
+                  guesses := tempSpace;
+                  
+                  Trim(guesses, Left); --trims whitespace in beginning
                end;
-            
+               
                Put_Line("You have guessed the following character(s): " & To_String(guesses)); --error check
                --send word, status, currguess to tryupdate, returns unbounded string
                tempstatus := status;
