@@ -3,19 +3,21 @@ with Ada.Strings;              use Ada.Strings;
 with Ada.Strings.Unbounded;    use Ada.Strings.Unbounded;
 with Ada.Strings.Fixed;        use Ada.Strings.Fixed;
 with Ada.Text_IO.Unbounded_Io; use Ada.Text_IO.Unbounded_IO;
+with Ada.Containers.Generic_Array_Sort;
 with tryupdate;
 with keepGuesses;
 with printhangman;
 with getword;
 with hideword;
 with isLetter;
-with String_Sort;
+
+--with String_Sort;
 
 Procedure hangman is
 
 
    --VARIABLES--
-   response  : character := 'y'; --keeps loop running
+   response  : character := 'y'; --keeps loop running, don't use this anymore
    num : integer := 0; --random number for word
    word : Unbounded_String; --word from dictionary
    status: Unbounded_String;
@@ -25,9 +27,13 @@ Procedure hangman is
 
 
 
+
    mistakes : integer := 0;
 
-
+   procedure Sort is new Ada.Containers.Generic_Array_Sort
+      (Index_Type   => Positive,
+      Element_Type => Character,
+      Array_Type   => String);
 
 Begin
    --- INITIALIZE GUESSES ---
@@ -83,8 +89,15 @@ Begin
             
             else
                Append(guesses, currguess);
-               String_Sort(guesses);
-      
+               --String_Sort(guesses);
+
+               declare
+                  tempString : String := To_String(guesses); --switch to string 
+               begin
+               Sort(tempString);
+               guesses := To_Unbounded_String(tempString); --switch to unbounded string
+               end;
+            
                Put_Line("You have guessed the following character(s): " & To_String(guesses)); --error check
                --send word, status, currguess to tryupdate, returns unbounded string
                tempstatus := status;
