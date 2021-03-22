@@ -37,7 +37,7 @@ function getWord return Unbounded_String  is
    File : File_Type;
    I : Integer := 0;
    S : Unbounded_String;
-   FileName : String := "testdict.txt";
+   FileName : String := "dictionary.txt";
    word : Unbounded_String;
    N : Integer;    
 
@@ -54,7 +54,7 @@ begin
       end if;
    end loop;
    Close (File);
-   Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map);
+   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map); --to lower
    return word;
 end getWord;
 

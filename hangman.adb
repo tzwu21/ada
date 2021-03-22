@@ -11,6 +11,7 @@ with getword;
 with hideword;
 with isLetter;
 with Ada.Strings.Maps.Constants;
+with writeWord;
 
 --with String_Sort;
 
@@ -49,9 +50,40 @@ Begin
 
    --num := randN;
    --Put_Line("random number is: " & Integer'Image(num)); --error check
+   Put_Line("would you like to add a word into the dictionary? (y/n) ");
+   declare 
+      resp : String := Ada.Text_IO.Get_Line;
+      
+
+   begin
+      while resp = "y" OR resp = "Y" loop
+         Put_Line("confirmed ");
+         Put_Line("please enter your new word: ");
+         declare
+         newword :String := Ada.Text_IO.Get_Line;
+         begin
+         writeWord(newword, "testdict.txt");
+         Put_Line("confirmed!");
+         
+         end;
+
+         Put_Line("would you like to add another word? (y/n) ");
+         resp := Ada.Text_IO.Get_Line;
+         
+
+      end loop;
+      if resp = "n" OR resp = "N" then
+      --go to next step
+      Put_Line("ok, maybe next time.");
+
+      else
+         Put_Line("input not recognized, moving on");
+      end if;
+   end;
    word := getword;
-   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map);
+   
    Put_Line("got word: " & To_String(word)); --error check
+   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map);
    status := hideword(word);
    Put_Line("current status: " & To_String(status));
 
@@ -70,15 +102,15 @@ Begin
       begin
          --Ada.Text_IO.Put_Line (S);
          currguess := To_Unbounded_String(S);
-         Ada.Strings.Unbounded.Translate(currguess, Ada.Strings.Maps.Constants.Lower_Case_Map);
+         Ada.Strings.Unbounded.Translate(currguess, Ada.Strings.Maps.Constants.Lower_Case_Map); --convert guess to lowercase
 
          
-         if Length(currguess) > 1 then
+         if Length(currguess) > 1 then --error check 
             Put_Line("Oops! You can only guess one letter at a time!");
             Letter := TRUE;
          end if;
          
-         if Letter = FALSE then 
+         if Letter = FALSE then --error check if already guessed
             for i in 1 .. Length(guesses) loop
                if (To_String(currguess)(1)) = (To_String(guesses)(i)) then
                   IsIn := TRUE;
@@ -113,7 +145,7 @@ Begin
                Put_Line("You have guessed the following character(s): " & To_String(guesses)); --error check
                --send word, status, currguess to tryupdate, returns unbounded string
                tempstatus := status;
-               status := tryupdate(word, status, currguess); --Character'Image(currguess)
+               status := tryupdate(word, status, currguess); --check 
                Put_Line("current status: " & To_String(status));
                if tempstatus = status then
                   mistakes := mistakes + 1;

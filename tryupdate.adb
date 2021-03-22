@@ -3,15 +3,18 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Text_IO;           use Ada.Text_IO;
 with Ada.Strings.Fixed;     use Ada.Strings.Fixed;
 with Ada.Strings.Bounded;   use Ada.Strings.Bounded;
+with Ada.Strings.Maps.Constants;
 
 function tryupdate
   (S1    : Unbounded_String;
    S2    : Unbounded_String;
    S3    : Unbounded_String) return Unbounded_String is --returns updated guessing string
 
-   word : String := To_String(S1);
+   word : String := To_String(S1); --still uppercase
    status : String := To_String(S2);
-   guess : String := To_String(S3); 
+   guess : String := To_String(S3); --given as lowercase
+   tempword : Unbounded_String := S1;
+   tempwordone : String := word;
   
 
    
@@ -26,9 +29,10 @@ begin
    --Put_Line("State: " & status);
    --Put_Line("Guess: " & guess);
     
-   
+   tempword := Ada.Strings.Unbounded.Translate(tempword, Ada.Strings.Maps.Constants.Lower_Case_Map); --convert tempword to lowercase
+   tempwordone := To_String(tempword);
    Cnt := Ada.Strings.Fixed.Count --gets number of instances of guess in word
-     (Source  => word,
+     (Source  => tempwordone,
       Pattern => guess);
    
    Put_Line ("Count for '" & guess & "': " & Natural'Image (Cnt)); --error check, can delete
@@ -36,14 +40,14 @@ begin
    Idx := 0;
    for I in 1 .. Cnt loop --for every instance of guess, find the index, update S2
       Idx := Index
-        (Source  => word,
+        (Source  => tempwordone,
          Pattern => guess,
          From    => Idx + 1);
         
       --Put_Line ("Found instance of '" & guess & "' at position: "
       --        & Natural'Image (Idx)); --error check, can delete
 
-      Upd(Idx) := guess(1); --assign state with guess, fixed string
+      Upd(Idx) := word(Idx); --assign state with guess, fixed string
       Res := To_Unbounded_String(Upd); --now unbounded string
       --nice job!
     

@@ -1,0 +1,76 @@
+V "GNAT Lib v2020"
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+
+U isletter%b		isletter.adb		5768e42f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W getword%b		getword.adb		getword.ali
+W printhangman%b	printhangman.adb	printhangman.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20200819050642 bb51c45a ada.numerics%s
+D a-nudira.ads		20200819050642 5984dff3 ada.numerics.discrete_random%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-string.ads		20200819050642 90ac6797 ada.strings%s
+D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
+D a-stmaco.ads		20200819050642 1c0e5368 ada.strings.maps.constants%s
+D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D getword.adb		20210322012044 93baeee1 getword%b
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D isletter.adb		20210322005956 227e4a91 isletter%b
+D printhangman.adb	20210322005956 cea282fe printhangman%b
+D system.ads		20200819050647 085b6ffb system%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-rannum.ads		20200819050646 99ade2f2 system.random_numbers%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [isletter standard 7 10 none]
+X 1 ada.ads
+16K9*Ada 20e8 20|1r6 1r33 2r6 2r33 3r6 3r33
+X 10 a-string.ads
+16K13*Strings 35e16 20|1w10 1r37 2r10 2r37
+X 13 a-strunb.ads
+82K21*Unbounded 758e26 20|2w18 2r45
+X 15 a-textio.ads
+57K13*Text_IO 727e16 20|3w10 3r37
+X 17 getword.adb
+7V10*getWord{13|87R9} 20|4w6
+X 20 isletter.adb
+7V10*isLetter{boolean} 7b10 7>20 12l5 12t13
+7e20 L{character} 11r11 11r35
+8E12 UpperCaseLetter{character} 11r16
+9E12 LowerCaseLetter{character} 11r40
+X 21 printhangman.adb
+6U11*printHangman 20|5w6
+

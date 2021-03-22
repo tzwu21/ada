@@ -1,0 +1,133 @@
+V "GNAT Lib v2020"
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U tryupdate%b		tryupdate.adb		681d18cf NE OO SU IL
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.bounded%s	a-strbou.adb		a-strbou.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+W ada.strings.maps%s	a-strmap.adb		a-strmap.ali
+W ada.strings.maps.constants%s  a-stmaco.ads	a-stmaco.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-string.ads		20200819050642 90ac6797 ada.strings%s
+D a-strbou.ads		20200819050642 84c37afd ada.strings.bounded%s
+D a-strfix.ads		20200819050642 86d6bc21 ada.strings.fixed%s
+D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
+D a-stmaco.ads		20200819050642 1c0e5368 ada.strings.maps.constants%s
+D a-strsup.ads		20200819050642 a27dcb33 ada.strings.superbounded%s
+D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
+D s-conca4.ads		20200819050645 7e642b20 system.concat_4%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-imgint.ads		20200819050645 02dbe0c2 system.img_int%s
+D s-memory.ads		20200819050645 597d6634 system.memory%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+D tryupdate.adb		20210322012004 5e084fda tryupdate%b
+G a e
+G c Z b b [tryupdate standard 8 10 none]
+X 1 ada.ads
+16K9*Ada 20e8 43|1r6 1r33 2r6 2r33 3r6 3r33 4r6 4r33 5r6 5r33 6r6 32r16 32r58
+. 34r11
+X 8 a-string.ads
+16K13*Strings 35e16 43|1w10 1r37 2r10 2r37 4r10 4r37 5r10 5r37 6r10 32r20
+. 32r62 34r15
+X 9 a-strbou.ads
+45K21*Bounded 1281e24 43|5w18 5r45
+X 10 a-strfix.ads
+43K21*Fixed 596e22 43|4w18 4r45 34r23
+117V13*Index{natural} 43|42s14
+118a7 Source{string} 43|43r10
+119a7 Pattern{string} 43|44r10
+120i7 From{positive} 43|45r10
+213V13*Count{natural} 43|34s29
+214a7 Source{string} 43|35r7
+215a7 Pattern{string} 43|36r7
+X 11 a-strmap.ads
+38K21*Maps 411e21 43|6r18 32r70
+107A9*Character_Mapping(character)
+X 12 a-stmaco.ads
+38K26*Constants 915e31 43|6w23 32r75
+54a4*Lower_Case_Map{11|107A9} 43|32r85
+X 14 a-strunb.ads
+82K21*Unbounded 758e26 43|2w18 2r45 32r28
+87R9*Unbounded_String<5|43R9> 741e14 43|9r12 10r12 11r12 11r37 16r15 24r9
+103V13*To_Unbounded_String{87R9} 43|51s14
+116V13*To_String{string} 43|13s21 14s23 15s22 23s19 33s19
+458V13*Translate{87R9} 43|32s38
+X 16 a-textio.ads
+57K13*Text_IO 727e16 43|3w10 3r37
+508U14*Put_Line 43|38s4
+X 20 system.ads
+67M9*Address
+X 29 s-memory.ads
+53V13*Alloc{20|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{20|67M9} 105i<c,__gnat_realloc>22
+X 35 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 43 tryupdate.adb
+8V10*tryupdate{14|87R9} 8b10 9>4 10>4 11>4 57l5 57t14
+9r4 S1{14|87R9} 13r31 16r35
+10r4 S2{14|87R9} 14r33 23r29 24r29
+11r4 S3{14|87R9} 15r32
+13a4 word{string} 17r28 50r19
+14a4 status{string}
+15a4 guess{string} 36r18 38r30 44r21
+16r4 tempword{14|87R9} 32m4 32r48 33r29
+17a4 tempwordone{string} 33m4 35r18 43r21
+21i4 Cnt{natural} 34m4 38r61 41r18
+22i4 Idx{natural} 40m4 42m7 45r21 50r11 50r24
+23a4 Upd{string} 50r7 51r34
+24r4 Res{14|87R9} 51m7 56r11
+41i8 I{integer}
+
