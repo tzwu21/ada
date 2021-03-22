@@ -5,9 +5,9 @@ with getWord;
 with printHangman;
 
 function isLetter (L : Character) return Boolean is
-subtype UpperCaseLetter is Character range 'A' .. 'Z';
-subtype LowerCaseLetter is Character range 'a' .. 'z';
+   subtype UpperCaseLetter is Character range 'A' .. 'Z';
+   subtype LowerCaseLetter is Character range 'a' .. 'z';
 begin
-return L in UpperCaseLetter or L in LowerCaseLetter; 
+   return L in UpperCaseLetter or L in LowerCaseLetter; 
 end isLetter;
 

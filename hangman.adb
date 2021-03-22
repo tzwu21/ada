@@ -5,11 +5,12 @@ with Ada.Strings.Fixed;        use Ada.Strings.Fixed;
 with Ada.Text_IO.Unbounded_Io; use Ada.Text_IO.Unbounded_IO;
 with Ada.Containers.Generic_Array_Sort;
 with tryupdate;
-with keepGuesses;
+--with keepGuesses;
 with printhangman;
 with getword;
 with hideword;
 with isLetter;
+with Ada.Strings.Maps.Constants;
 
 --with String_Sort;
 
@@ -31,7 +32,7 @@ Procedure hangman is
    mistakes : integer := 0;
 
    procedure Sort is new Ada.Containers.Generic_Array_Sort
-      (Index_Type   => Positive,
+     (Index_Type   => Positive,
       Element_Type => Character,
       Array_Type   => String);
 
@@ -49,6 +50,7 @@ Begin
    --num := randN;
    --Put_Line("random number is: " & Integer'Image(num)); --error check
    word := getword;
+   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map);
    Put_Line("got word: " & To_String(word)); --error check
    status := hideword(word);
    Put_Line("current status: " & To_String(status));
@@ -68,16 +70,15 @@ Begin
       begin
          --Ada.Text_IO.Put_Line (S);
          currguess := To_Unbounded_String(S);
+         Ada.Strings.Unbounded.Translate(currguess, Ada.Strings.Maps.Constants.Lower_Case_Map);
+
          
-         for i in 1 .. Length(currguess) loop
-            if i = 2 then
-               Put_Line("Oops! You can only guess one letter at a time!");
-               Letter := TRUE;
-            end if;
-         end loop;
+         if Length(currguess) > 1 then
+            Put_Line("Oops! You can only guess one letter at a time!");
+            Letter := TRUE;
+         end if;
          
          if Letter = FALSE then 
-            Put_Line(currguess);
             for i in 1 .. Length(guesses) loop
                if (To_String(currguess)(1)) = (To_String(guesses)(i)) then
                   IsIn := TRUE;
@@ -96,14 +97,14 @@ Begin
                   tempSpace : Unbounded_String; 
                begin
                
-               Sort(tempString); --sorts in alphabetical order
+                  Sort(tempString); --sorts in alphabetical order
                
 
-               --guesses := To_Unbounded_String(tempString); --switch to unbounded string
-               for i in 1..Length(guesses) loop --spaces characters out
-                  Append(tempSpace, tempString(i));
-                  Append(tempSpace, " ");
-               end loop;
+                  --guesses := To_Unbounded_String(tempString); --switch to unbounded string
+                  for i in 1..Length(guesses) loop --spaces characters out
+                     Append(tempSpace, tempString(i));
+                     Append(tempSpace, " ");
+                  end loop;
                   guesses := tempSpace;
                   
                   Trim(guesses, Left); --trims whitespace in beginning
