@@ -24,11 +24,7 @@ function tryupdate
    Res: Unbounded_String := S2; --unbounded string
    
 begin
-   --Put_Line("Output from tryUpdate: "); --error check, can delete
-   --Put_Line("Word: " & word); --error checks, can delete later
-   --Put_Line("State: " & status);
-   --Put_Line("Guess: " & guess);
-    
+
    tempword := Ada.Strings.Unbounded.Translate(tempword, Ada.Strings.Maps.Constants.Lower_Case_Map); --convert tempword to lowercase
    tempwordone := To_String(tempword);
    Cnt := Ada.Strings.Fixed.Count --gets number of instances of guess in word
@@ -43,9 +39,6 @@ begin
         (Source  => tempwordone,
          Pattern => guess,
          From    => Idx + 1);
-        
-      --Put_Line ("Found instance of '" & guess & "' at position: "
-      --        & Natural'Image (Idx)); --error check, can delete
 
       Upd(Idx) := word(Idx); --assign state with guess, fixed string
       Res := To_Unbounded_String(Upd); --now unbounded string

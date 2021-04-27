@@ -54,7 +54,7 @@ begin
       end if;
    end loop;
    Close (File);
-   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map); --to lower
+
    return word;
 end getWord;
 
