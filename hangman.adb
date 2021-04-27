@@ -1,3 +1,10 @@
+----------------------------------
+--Name: Adam H. Kevin E. Timmy W.
+--Date: 4/27/2021
+--Class: Csci 324
+--Program: hangman
+----------------------------------
+
 with Ada.Text_IO;              use Ada.Text_IO;
 with Ada.Strings;              use Ada.Strings;
 with Ada.Strings.Unbounded;    use Ada.Strings.Unbounded;
