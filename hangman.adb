@@ -48,8 +48,7 @@ Begin
    New_Line;
 
 
-   --num := randN;
-   --Put_Line("random number is: " & Integer'Image(num)); --error check
+
    Put_Line("would you like to add a word into the dictionary? (y/n) ");
    declare 
       resp : String := Ada.Text_IO.Get_Line;
@@ -83,7 +82,6 @@ Begin
    word := getword;
    
    Put_Line("got word: " & To_String(word)); --error check
-   --Ada.Strings.Unbounded.Translate(word, Ada.Strings.Maps.Constants.Lower_Case_Map);
    status := hideword(word);
    Put_Line("current status: " & To_String(status));
 
@@ -93,14 +91,13 @@ Begin
    while (status /= word ) AND (mistakes < 6) loop --status /= word
       printhangman(mistakes);
 
-      --Put_Line("You have guessed the following character(s): " & To_String(guesses));
+
       Ada.Text_IO.Put ("Enter a character to guess: "); --error check for already picked character
       declare
          S : String := Ada.Text_IO.Get_Line; --currently allows more than one character in
          Letter: Boolean := FALSE;
          IsIn : Boolean := FALSE;
       begin
-         --Ada.Text_IO.Put_Line (S);
          currguess := To_Unbounded_String(S);
          Ada.Strings.Unbounded.Translate(currguess, Ada.Strings.Maps.Constants.Lower_Case_Map); --convert guess to lowercase
 
@@ -132,7 +129,6 @@ Begin
                   Sort(tempString); --sorts in alphabetical order
                
 
-                  --guesses := To_Unbounded_String(tempString); --switch to unbounded string
                   for i in 1..Length(guesses) loop --spaces characters out
                      Append(tempSpace, tempString(i));
                      Append(tempSpace, " ");
