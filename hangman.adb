@@ -62,7 +62,7 @@ Begin
          declare
          newword :String := Ada.Text_IO.Get_Line;
          begin
-         writeWord(newword, "testdict.txt");
+         writeWord(newword, "dictionary.txt");
          Put_Line("confirmed!");
          
          end;
